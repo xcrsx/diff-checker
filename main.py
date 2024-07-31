@@ -27,6 +27,7 @@ class FileDiffChecker(QWidget):
 
         self.highlighter1 = None
         self.highlighter2 = None
+        self.highlighter3 = None
 
 
     def open_file1(self):
@@ -36,6 +37,7 @@ class FileDiffChecker(QWidget):
                 self.file1_content = file.read()
                 self.ui.file1_form.setPlainText(self.file1_content)
             self.highlighter1 = CodeSyntaxHighlight(self.ui.file1_form.document(), "python", "dracula")
+            self.highlighter3 = CodeSyntaxHighlight(self.ui.diff_view_form.document(), "python", "dracula")
             self.compare_files()
 
 
