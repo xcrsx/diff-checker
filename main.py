@@ -18,6 +18,8 @@ class FileDiffChecker(QWidget):
         # Buttons
         self.ui.openFile1_btn.clicked.connect(self.open_file1)
         self.ui.openFile2_btn.clicked.connect(self.open_file2)
+        self.ui.clear_btn.clicked.connect(self.clear_forms)
+        self.ui.exit_btn.clicked.connect(self.close)
 
 
     def open_file1(self):
@@ -34,6 +36,13 @@ class FileDiffChecker(QWidget):
             with open(file_name, 'r') as file:
                 self.file2_content = file.read()
                 self.ui.file2_form.setPlainText(self.file2_content)
+
+
+    def clear_forms(self):
+        self.ui.file1_form.clear()
+        self.ui.file2_form.clear()
+
+
 
 
 if __name__ == "__main__":
