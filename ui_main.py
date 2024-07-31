@@ -15,26 +15,31 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QPushButton,
-    QSizePolicy, QTableView, QTextEdit, QWidget)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLayout, QPushButton,
+    QSizePolicy, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_DiffChecker(object):
     def setupUi(self, DiffChecker):
         if not DiffChecker.objectName():
             DiffChecker.setObjectName(u"DiffChecker")
-        DiffChecker.resize(1128, 652)
+        DiffChecker.resize(1137, 660)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(DiffChecker.sizePolicy().hasHeightForWidth())
+        DiffChecker.setSizePolicy(sizePolicy)
         DiffChecker.setStyleSheet(u"background-color: #282A36;")
-        self.diff_view_form = QTableView(DiffChecker)
-        self.diff_view_form.setObjectName(u"diff_view_form")
-        self.diff_view_form.setGeometry(QRect(0, 300, 1131, 351))
-        self.diff_view_form.setMaximumSize(QSize(1131, 16777215))
-        self.layoutWidget = QWidget(DiffChecker)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 0, 428, 34))
-        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
+        self.verticalLayout = QVBoxLayout(DiffChecker)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(10)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.verticalLayout_2.setContentsMargins(10, 10, 10, 10)
+        self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.openFile1_btn = QPushButton(self.layoutWidget)
+        self.horizontalLayout.setContentsMargins(-1, -1, 500, -1)
+        self.openFile1_btn = QPushButton(DiffChecker)
         self.openFile1_btn.setObjectName(u"openFile1_btn")
         self.openFile1_btn.setStyleSheet(u"QPushButton{\n"
 "	color: #F8F8F2;\n"
@@ -53,7 +58,7 @@ class Ui_DiffChecker(object):
 
         self.horizontalLayout.addWidget(self.openFile1_btn)
 
-        self.openFile2_btn = QPushButton(self.layoutWidget)
+        self.openFile2_btn = QPushButton(DiffChecker)
         self.openFile2_btn.setObjectName(u"openFile2_btn")
         self.openFile2_btn.setStyleSheet(u"QPushButton{\n"
 "	color: #F8F8F2;\n"
@@ -72,7 +77,7 @@ class Ui_DiffChecker(object):
 
         self.horizontalLayout.addWidget(self.openFile2_btn)
 
-        self.clear_btn = QPushButton(self.layoutWidget)
+        self.clear_btn = QPushButton(DiffChecker)
         self.clear_btn.setObjectName(u"clear_btn")
         self.clear_btn.setStyleSheet(u"QPushButton{\n"
 "	color: #F8F8F2;\n"
@@ -91,7 +96,7 @@ class Ui_DiffChecker(object):
 
         self.horizontalLayout.addWidget(self.clear_btn)
 
-        self.exit_btn = QPushButton(self.layoutWidget)
+        self.exit_btn = QPushButton(DiffChecker)
         self.exit_btn.setObjectName(u"exit_btn")
         self.exit_btn.setStyleSheet(u"QPushButton{\n"
 "	color: #F8F8F2;\n"
@@ -110,21 +115,32 @@ class Ui_DiffChecker(object):
 
         self.horizontalLayout.addWidget(self.exit_btn)
 
-        self.layoutWidget1 = QWidget(DiffChecker)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(0, 40, 1131, 251))
-        self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget1)
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
+
+        self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.file1_form = QTextEdit(self.layoutWidget1)
+        self.file1_form = QTextEdit(DiffChecker)
         self.file1_form.setObjectName(u"file1_form")
 
         self.horizontalLayout_2.addWidget(self.file1_form)
 
-        self.file2_form = QTextEdit(self.layoutWidget1)
+        self.file2_form = QTextEdit(DiffChecker)
         self.file2_form.setObjectName(u"file2_form")
 
         self.horizontalLayout_2.addWidget(self.file2_form)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+
+        self.diff_view_form = QTextEdit(DiffChecker)
+        self.diff_view_form.setObjectName(u"diff_view_form")
+        self.diff_view_form.setReadOnly(True)
+
+        self.verticalLayout_2.addWidget(self.diff_view_form)
+
+
+        self.verticalLayout.addLayout(self.verticalLayout_2)
 
 
         self.retranslateUi(DiffChecker)
@@ -138,5 +154,6 @@ class Ui_DiffChecker(object):
         self.openFile2_btn.setText(QCoreApplication.translate("DiffChecker", u"Open File 2", None))
         self.clear_btn.setText(QCoreApplication.translate("DiffChecker", u"Clear", None))
         self.exit_btn.setText(QCoreApplication.translate("DiffChecker", u"Exit", None))
+        self.diff_view_form.setPlaceholderText("")
     # retranslateUi
 

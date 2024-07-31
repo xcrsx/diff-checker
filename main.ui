@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1128</width>
-    <height>652</height>
+    <width>1137</width>
+    <height>660</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Diff Checker</string>
@@ -16,36 +22,36 @@
   <property name="styleSheet">
    <string notr="true">background-color: #282A36;</string>
   </property>
-  <widget class="QTableView" name="diff_view_form">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>300</y>
-     <width>1131</width>
-     <height>351</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>1131</width>
-     <height>16777215</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>428</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QPushButton" name="openFile1_btn">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+     </property>
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="rightMargin">
+        <number>500</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="openFile1_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	color: #F8F8F2;
 	border: 1px solid rgba(255,255,255,40);
 	border-radius:7px;
@@ -59,16 +65,16 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color:rgba(98, 114, 164,70);
 }</string>
-      </property>
-      <property name="text">
-       <string>Open File 1</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="openFile2_btn">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+         </property>
+         <property name="text">
+          <string>Open File 1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="openFile2_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	color: #F8F8F2;
 	border: 1px solid rgba(255,255,255,40);
 	border-radius:7px;
@@ -82,16 +88,16 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color:rgba(98, 114, 164,70);
 }</string>
-      </property>
-      <property name="text">
-       <string>Open File 2</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="clear_btn">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+         </property>
+         <property name="text">
+          <string>Open File 2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="clear_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	color: #F8F8F2;
 	border: 1px solid rgba(255,255,255,40);
 	border-radius:7px;
@@ -105,16 +111,16 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color:rgba(98, 114, 164,70);
 }</string>
-      </property>
-      <property name="text">
-       <string>Clear</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="exit_btn">
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+         </property>
+         <property name="text">
+          <string>Clear</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exit_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
 	color: #F8F8F2;
 	border: 1px solid rgba(255,255,255,40);
 	border-radius:7px;
@@ -128,32 +134,37 @@ QPushButton:hover{
 QPushButton:pressed{
 	background-color:rgba(98, 114, 164,70);
 }</string>
-      </property>
-      <property name="text">
-       <string>Exit</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>40</y>
-     <width>1131</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QTextEdit" name="file1_form"/>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="file2_form"/>
-    </item>
-   </layout>
-  </widget>
+         </property>
+         <property name="text">
+          <string>Exit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTextEdit" name="file1_form"/>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="file2_form"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="diff_view_form">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
