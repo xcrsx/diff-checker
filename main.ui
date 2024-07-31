@@ -145,15 +145,101 @@ QPushButton:pressed{
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QTextEdit" name="file1_form"/>
+        <widget class="QTextEdit" name="file1_form">
+         <property name="styleSheet">
+          <string notr="true">QScrollBar:vertical {
+    border: 1px solid #59595B;
+    background: #394162;
+    width:10px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #272D44;
+    min-height: 0px;
+	border-radius: 10px;
+}
+QScrollBar::add-line:vertical {
+    background: #272D44;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}
+QScrollBar::sub-line:vertical {
+    background: #272D44;
+    height: 0 px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}</string>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QTextEdit" name="file2_form"/>
+        <widget class="QTextEdit" name="file2_form">
+         <property name="styleSheet">
+          <string notr="true">QScrollBar:vertical {
+    border: 1px solid #59595B;
+    background: #394162;
+    width:10px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #272D44;
+    min-height: 0px;
+	border-radius: 10px;
+}
+QScrollBar::add-line:vertical {
+    background: #272D44;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}
+QScrollBar::sub-line:vertical {
+    background: #272D44;
+    height: 0 px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
       <widget class="QTextEdit" name="diff_view_form">
+       <property name="styleSheet">
+        <string notr="true">QScrollBar:vertical {
+    border: 1px solid #59595B;
+    background: #394162;
+    width:10px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #272D44;
+    min-height: 0px;
+	border-radius: 10px;
+}
+QScrollBar::add-line:vertical {
+    background: #272D44;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}
+QScrollBar::sub-line:vertical {
+    background: #272D44;
+    height: 0 px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+	border-radius: 10px;
+}</string>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
        </property>

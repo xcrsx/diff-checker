@@ -122,11 +122,62 @@ class Ui_DiffChecker(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.file1_form = QTextEdit(DiffChecker)
         self.file1_form.setObjectName(u"file1_form")
+        self.file1_form.setStyleSheet(u"QScrollBar:vertical {\n"
+"    border: 1px solid #59595B;\n"
+"    background: #394162;\n"
+"    width:10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #272D44;\n"
+"    min-height: 0px;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::add-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::sub-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0 px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}")
 
         self.horizontalLayout_2.addWidget(self.file1_form)
 
         self.file2_form = QTextEdit(DiffChecker)
         self.file2_form.setObjectName(u"file2_form")
+        self.file2_form.setStyleSheet(u"QScrollBar:vertical {\n"
+"    border: 1px solid #59595B;\n"
+"    background: #394162;\n"
+"    width:10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #272D44;\n"
+"    min-height: 0px;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::add-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::sub-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0 px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}")
+        self.file2_form.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
 
         self.horizontalLayout_2.addWidget(self.file2_form)
 
@@ -135,6 +186,31 @@ class Ui_DiffChecker(object):
 
         self.diff_view_form = QTextEdit(DiffChecker)
         self.diff_view_form.setObjectName(u"diff_view_form")
+        self.diff_view_form.setStyleSheet(u"QScrollBar:vertical {\n"
+"    border: 1px solid #59595B;\n"
+"    background: #394162;\n"
+"    width:10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #272D44;\n"
+"    min-height: 0px;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::add-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"QScrollBar::sub-line:vertical {\n"
+"    background: #272D44;\n"
+"    height: 0 px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"	border-radius: 10px;\n"
+"}")
         self.diff_view_form.setReadOnly(True)
 
         self.verticalLayout_2.addWidget(self.diff_view_form)
