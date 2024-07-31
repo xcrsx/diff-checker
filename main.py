@@ -58,6 +58,7 @@ class FileDiffChecker(QWidget):
     def clear_forms(self):
         self.ui.file1_form.clear()
         self.ui.file2_form.clear()
+        self.ui.diff_view_form.clear()
 
 
     def compare_files(self):
