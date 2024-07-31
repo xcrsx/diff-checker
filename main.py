@@ -2,6 +2,7 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QWidget, QFileDialog
 
+from superqt.utils import CodeSyntaxHighlight
 from ui_main import Ui_DiffChecker
 
 
@@ -22,12 +23,17 @@ class FileDiffChecker(QWidget):
         self.ui.exit_btn.clicked.connect(self.close)
 
 
+        self.highlighter1 = None
+        self.highlighter2 = None
+
+
     def open_file1(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Open File 1")
         if file_name:
             with open(file_name, 'r') as file:
                 self.file1_content = file.read()
                 self.ui.file1_form.setPlainText(self.file1_content)
+            self.highlighter1 = CodeSyntaxHighlight(self.ui.file1_form.document(), "python", "dracula")
 
 
     def open_file2(self):
@@ -36,6 +42,7 @@ class FileDiffChecker(QWidget):
             with open(file_name, 'r') as file:
                 self.file2_content = file.read()
                 self.ui.file2_form.setPlainText(self.file2_content)
+            self.highlighter1 = CodeSyntaxHighlight(self.ui.file2_form.document(), "python", "dracula")
 
 
     def clear_forms(self):
