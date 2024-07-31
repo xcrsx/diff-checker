@@ -73,10 +73,10 @@ class FileDiffChecker(QWidget):
 
             for line in diff:
                 if line.startswith('-'):
-                    self.insert_diff_line(cursor, line[2:], QColor(255, 200, 200), f"{file1_line_num:4} |    | - ")
+                    self.insert_diff_line(cursor, line[2:], QColor(255, 85, 85, 50), f"{file1_line_num:4} |    | - ")
                     file1_line_num += 1
                 elif line.startswith('+'):
-                    self.insert_diff_line(cursor, line[2:], QColor(200, 255, 200), f"     | {file2_line_num:4} | + ")
+                    self.insert_diff_line(cursor, line[2:], QColor(80, 250, 123, 50), f"     | {file2_line_num:4} | + ")
                     file2_line_num += 1
                 elif line.startswith(' '):
                     self.insert_diff_line(cursor, line[2:], None, f"{file1_line_num:4} | {file2_line_num:4} |   ")
