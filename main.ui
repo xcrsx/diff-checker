@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: #282A36;</string>
   </property>
-  <widget class="QTableView" name="diff_view">
+  <widget class="QTableView" name="diff_view_form">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -147,10 +147,10 @@ QPushButton:pressed{
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QTextEdit" name="file1_content"/>
+     <widget class="QTextEdit" name="file1_form"/>
     </item>
     <item>
-     <widget class="QTextEdit" name="file2_content"/>
+     <widget class="QTextEdit" name="file2_form"/>
     </item>
    </layout>
   </widget>

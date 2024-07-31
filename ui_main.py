@@ -24,10 +24,10 @@ class Ui_DiffChecker(object):
             DiffChecker.setObjectName(u"DiffChecker")
         DiffChecker.resize(1128, 652)
         DiffChecker.setStyleSheet(u"background-color: #282A36;")
-        self.diff_view = QTableView(DiffChecker)
-        self.diff_view.setObjectName(u"diff_view")
-        self.diff_view.setGeometry(QRect(0, 300, 1131, 351))
-        self.diff_view.setMaximumSize(QSize(1131, 16777215))
+        self.diff_view_form = QTableView(DiffChecker)
+        self.diff_view_form.setObjectName(u"diff_view_form")
+        self.diff_view_form.setGeometry(QRect(0, 300, 1131, 351))
+        self.diff_view_form.setMaximumSize(QSize(1131, 16777215))
         self.layoutWidget = QWidget(DiffChecker)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 0, 428, 34))
@@ -116,15 +116,15 @@ class Ui_DiffChecker(object):
         self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.file1_content = QTextEdit(self.layoutWidget1)
-        self.file1_content.setObjectName(u"file1_content")
+        self.file1_form = QTextEdit(self.layoutWidget1)
+        self.file1_form.setObjectName(u"file1_form")
 
-        self.horizontalLayout_2.addWidget(self.file1_content)
+        self.horizontalLayout_2.addWidget(self.file1_form)
 
-        self.file2_content = QTextEdit(self.layoutWidget1)
-        self.file2_content.setObjectName(u"file2_content")
+        self.file2_form = QTextEdit(self.layoutWidget1)
+        self.file2_form.setObjectName(u"file2_form")
 
-        self.horizontalLayout_2.addWidget(self.file2_content)
+        self.horizontalLayout_2.addWidget(self.file2_form)
 
 
         self.retranslateUi(DiffChecker)
