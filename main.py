@@ -5,6 +5,8 @@ from PySide6.QtWidgets import QApplication, QWidget, QFileDialog
 from PySide6.QtGui import QColor, QTextCursor, QTextCharFormat, QTextBlockFormat
 
 from superqt.utils import CodeSyntaxHighlight
+from pygments.lexers import guess_lexer_for_filename
+
 from ui_main import Ui_DiffChecker
 
 
@@ -36,8 +38,9 @@ class FileDiffChecker(QWidget):
             with open(file_name, 'r') as file:
                 self.file1_content = file.read()
                 self.ui.file1_form.setPlainText(self.file1_content)
-            self.highlighter1 = CodeSyntaxHighlight(self.ui.file1_form.document(), "python", "dracula")
-            self.highlighter3 = CodeSyntaxHighlight(self.ui.diff_view_form.document(), "python", "dracula")
+            language = self.detect_language(file_name, self.file1_content)
+            CodeSyntaxHighlight(self.ui.file1_form.document(), language, "dracula")
+            CodeSyntaxHighlight(self.ui.diff_view_form.document(), language, "dracula")
             self.compare_files()
 
 
@@ -47,7 +50,8 @@ class FileDiffChecker(QWidget):
             with open(file_name, 'r') as file:
                 self.file2_content = file.read()
                 self.ui.file2_form.setPlainText(self.file2_content)
-            self.highlighter1 = CodeSyntaxHighlight(self.ui.file2_form.document(), "python", "dracula")
+            language = self.detect_language(file_name, self.file2_content)
+            CodeSyntaxHighlight(self.ui.file2_form.document(), language, "dracula")
             self.compare_files()
 
 
@@ -94,6 +98,11 @@ class FileDiffChecker(QWidget):
 
         cursor.insertText(code)
         cursor.insertText("\n")
+
+
+    def detect_language(self, file_name, file_content):
+        language = guess_lexer_for_filename(file_name, file_content).name
+        return language
 
 
 
