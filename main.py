@@ -2,6 +2,7 @@ import difflib
 import sys
 
 from pygments.lexers import guess_lexer_for_filename
+from pygments.util import ClassNotFound
 from PySide6.QtGui import (QColor, QTextBlockFormat, QTextCharFormat,
                            QTextCursor)
 from PySide6.QtWidgets import QApplication, QFileDialog, QWidget
@@ -47,7 +48,7 @@ class FileDiffChecker(QWidget):
         """
         file_name, _ = QFileDialog.getOpenFileName(self, "Open File 1")
         if file_name:
-            with open(file_name, "r") as file:
+            with open(file_name, "r", errors="replace") as file:
                 self.file1_content = file.read()
                 self.ui.file1_form.setPlainText(self.file1_content)
             # Detect language for syntax highlighting
@@ -64,7 +65,7 @@ class FileDiffChecker(QWidget):
         """
         file_name, _ = QFileDialog.getOpenFileName(self, "Open File 2")
         if file_name:
-            with open(file_name, "r") as file:
+            with open(file_name, "r", errors="replace") as file:
                 self.file2_content = file.read()
                 self.ui.file2_form.setPlainText(self.file2_content)
             # Detect language for syntax highlighting
@@ -159,7 +160,10 @@ class FileDiffChecker(QWidget):
         Returns:
             str: The name of the detected language.
         """
-        language = guess_lexer_for_filename(file_name, file_content).name
+        try:
+            language = guess_lexer_for_filename(file_name, file_content).name
+        except ClassNotFound:
+            language = "Text only"
         return language
 
 
